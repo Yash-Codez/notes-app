@@ -1,15 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './app/**/*.{css,xml,html,vue,svelte,ts,tsx}'
-  ],
-  // use the .ns-dark class to control dark mode (applied by NativeScript) - since 'media' (default) is not supported.
-  darkMode: ['class', '.ns-dark'],
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      container: {
+        center: true,
+        padding: '2rem',
+      },
+    },
   },
   plugins: [],
-  corePlugins: {
-    preflight: false // disables browser-specific resets
-  }
-}
+};
